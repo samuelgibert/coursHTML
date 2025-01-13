@@ -1,0 +1,193 @@
+/* Titres */
+h1, h2, h3, h4 {
+    font-weight: normal;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    background: linear-gradient(to right, #458bc5, #76a1cf);
+    color: white; /* Texte en blanc */
+    padding: 10px; /* Espacement autour du texte */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+h3 {
+    font-size: 1.2em;
+    background-color: #a3c8f7; /* Fond bleu clair */
+    color: black; /* Texte noir */
+    padding: 8px; /* Espacement autour du texte */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+
+h4 {
+    font-size: 1em;
+    color: #666;
+    text-decoration: underline;
+}
+
+/* Paragraphe et autres styles inchangés */
+p {
+    margin: 15px 0;
+    font-size: 1.1em;
+    
+}
+
+ul, ol {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*style du code */
+.code-container {
+    position: relative;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /*padding: 1rem;*/
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.copy-button,.run-button {
+    right: 0.5rem;
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.copy-button{
+    top: 0.5rem;
+}
+
+.run-button{
+    text-decoration: none;
+    font-family: arial;
+}
+
+.copy-button:hover,.run-button:hover {
+    color: #555;
+
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.exemple {
+    border: 1px solid #ddd; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 2rem; /* Ajoutez de l'espace à droite pour inclure le bouton */
+    background-color: #f9f9f9; /* Fond clair */
+    font-family: consolas;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    position: relative; /* Contexte pour position absolue */
+    
+}
+
+code{
+    font-family: consolas;
+    white-space: pre-wrap;
+    overflow-y: auto; /* Barre de défilement horizontale si nécessaire */
+}
+
+.exemple .copy-button {
+    top: 5px; /* Positionne à 5px du haut */
+    right: 5px; /* Positionne à 5px de la droite */
+    position: absolute; /* Assure le positionnement relatif au conteneur */
+}
+
+.decale {
+    display: block; /* Assure que cette ligne occupe tout l'espace */
+    margin-left: 20px; /* Décalage vers la droite */
+}
+
+
+
+.image-container {
+    display: flex;
+    gap: 10px; /* Espacement entre les images */
+    max-width: 100%; /* Limite à la largeur du conteneur parent */
+    text-align: center;
+    justify-content: space-between; /* Par défaut : espacement entre plusieurs images */
+}
+
+.image-container img {
+    width: calc(50% - 5px); /* Les images prennent 50% avec gap */
+    height: auto; /* Garde la proportion */
+    border: 2px solid #ccc; /* Bordure autour des images */
+    border-radius: 5px; /* Coins arrondis pour un rendu esthétique */
+    cursor: pointer; /* Indique que l'image est cliquable */
+    transition: transform 0.2s ease; /* Animation au survol */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Si le conteneur contient une seule image */
+.image-container:has(img:only-child) {
+    justify-content: center; /* Centre l'image unique */
+}
+
+.image-container:has(img:only-child) img {
+    width: auto; /* L'image unique garde sa taille naturelle */
+    max-width: 100%; /* Empêche de dépasser la largeur du conteneur */
+}
+
+/* Styles pour la popup */
+.popup {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup img {
+    width: 80%; /* Limite à 80% de la largeur de la fenêtre */
+    max-height: 90%; /* Assure que l'image reste dans la fenêtre */
+    border: 3px solid #fff;
+    border-radius: 10px;
+    object-fit: contain; /* Garde les proportions même si la fenêtre est plus haute */
+}
